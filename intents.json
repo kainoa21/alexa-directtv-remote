@@ -1,0 +1,34 @@
+{
+  "intents": [
+    {
+      "intent": "HelpIntent",
+      "slots": []
+    },
+    {
+      "intent": "OnIntent",
+      "slots": []
+    },
+    {
+      "intent": "OffIntent",
+      "slots": []
+    },
+    {
+      "intent": "CommandIntent",
+      "slots": [ 
+        {
+          "name": "Command",
+          "type": "LITERAL"
+        }
+      ]
+    },
+    {
+      "intent": "TuneIntent",
+      "slots": [ 
+        {
+          "name": "Channel",
+          "type": "NUMBER"
+        }
+      ]
+    }
+  ]
+}
