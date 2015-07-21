@@ -2,7 +2,9 @@
  * This Alexa skill allows a user to control a DirectTV set top box.
  **/
  
- var request = require('request');
+var request = require('request');
+
+var REMOTE_IP = '68.70.138.99';
 
 // Route the incoming request based on type (LaunchRequest, IntentRequest,
 // etc.) The JSON body of the request is provided in the event parameter.
@@ -125,7 +127,7 @@ function getCommandResponse(key, callback) {
     var repromptText = "I'm sorry, I did not recognize the key you asked me to press.  Try saying, press select or press chanup.";
     var shouldEndSession = true;
     
-    request.get('http://107.214.207.35:8080/remote/processKey?key=' + key, function (err, res, body) {
+    request.get('http://' + REMOTE_IP + ':8080/remote/processKey?key=' + key, function (err, res, body) {
         console.log(body);
         if (err) {
             // do something
@@ -146,7 +148,7 @@ function getTuneResponse(intent, callback) {
     var repromptText = "I'm sorry, I did not recognize the channel you asked me to tune to.  Try saying, channel five, channel eighty four, or channel one hundred forty two.";
     var shouldEndSession = true;
     
-    request.get('http://107.214.207.35:8080/tv/tune?major=' + channel, function (err, res, body) {
+    request.get('http://' + REMOTE_IP + ':8080/tv/tune?major=' + channel, function (err, res, body) {
         console.log(body);
         if (err) {
             // do something
