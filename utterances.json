@@ -18,6 +18,12 @@ OnIntent power on
 OffIntent off
 OffIntent turn off
 OffIntent power off
+ChannelUpIntent channel up
+ChannelUpIntent go up one channel
+ChannelUpIntent go up a channel
+ChannelDownIntent channel down
+ChannelDownIntent go down one channel
+ChannelDownIntent go down a channel
 CommandIntent press {power|Command}
 CommandIntent press {poweron|Command}
 CommandIntent press {poweroff|Command}
@@ -31,6 +37,7 @@ CommandIntent press {fast forward|Command}
 CommandIntent press {record|Command}
 CommandIntent press {play|Command}
 CommandIntent press {guide|Command}
+CommandIntent change to {guide|Command}
 CommandIntent press {active|Command}
 CommandIntent press {list|Command}
 CommandIntent press {exit|Command}
@@ -47,7 +54,9 @@ CommandIntent press {green|Command}
 CommandIntent press {yellow|Command}
 CommandIntent press {blue|Command}
 CommandIntent press {chanup|Command}
+CommandIntent press {channel up|Command}
 CommandIntent press {chandown|Command}
+CommandIntent press {channel down|Command}
 CommandIntent press {prev|Command}
 CommandIntent press {zero|Command}
 CommandIntent press {one|Command}

@@ -8,8 +8,20 @@
       "intent": "OnIntent",
       "slots": []
     },
-    {
+        {
       "intent": "OffIntent",
+      "slots": []
+    },
+    {
+      "intent": "ChannelUpIntent",
+      "slots": []
+    },
+    {
+      "intent": "ChannelDownIntent",
+      "slots": []
+    },
+    {
+      "intent": "ChannelPreviousIntent",
       "slots": []
     },
     {

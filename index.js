@@ -13,14 +13,14 @@ exports.handler = function (event, context) {
         console.log("event.session.application.applicationId=" + event.session.application.applicationId);
 
         /**
-         * Uncomment this if statement and populate with your skill's application ID to
-         * prevent someone else from configuring a skill that sends requests to this function.
+         * Prevent someone else from configuring a skill that sends requests to this function.
          */
-        /*
-        if (event.session.application.applicationId !== "amzn1.echo-sdk-ams.app.[unique-value-here]") {
-             context.fail("Invalid Application ID");
-         }
-        */
+        
+        if (event.session.application.applicationId !== "amzn1.echo-sdk-ams.app.7bc28e91-779f-4e2a-9d8a-1768d38664d4") {
+             console.log("Invalid Application ID");
+             //context.fail("Invalid Application ID");
+        }
+        
 
         if (event.session.new) {
             onSessionStarted({requestId: event.request.requestId}, event.session);
@@ -83,6 +83,12 @@ function onIntent(intentRequest, session, callback) {
         getCommandResponse('poweron', callback);
     } else if ("OffIntent" === intentName) {
         getCommandResponse('poweroff', callback);
+    } else if ("ChannelUpIntent" === intentName) {
+        getCommandResponse('chanup', callback);
+    } else if ("ChannelDownIntent" === intentName) {
+        getCommandResponse('chandown', callback);
+    } else if ("ChannelPreviousIntent" === intentName) {
+        getCommandResponse('prev', callback);
     } else if ("CommandIntent" === intentName) {
         getCommandResponse(intent.slots.Command.value, callback);
     } else if ("TuneIntent" === intentName) {
@@ -100,6 +106,74 @@ function onSessionEnded(sessionEndedRequest, session) {
     console.log("onSessionEnded requestId=" + sessionEndedRequest.requestId
                 + ", sessionId=" + session.sessionId);
     // Add cleanup logic here
+}
+
+/**
+ * Map command values to the appropriate button names for the Direct TV api
+ */
+function mapCommand(input) {
+    var output = input;
+
+    // map key value
+    switch(input) {
+        case 'previous':
+            output = 'prev';
+            break;
+        case 'rewind':
+            output = 'rew';
+            break;
+        case 'fast forward':
+            output = 'ffwd';
+            break;
+        case 'zero':
+            output = '0';
+            break;
+        case 'one':
+            output = '1';
+            break;
+        case 'two':
+            output = '2';
+            break;
+        case 'three':
+            output = '3';
+            break;
+        case 'four':
+            output = '4';
+            break;
+        case 'five':
+            output = '5';
+            break;
+        case 'six':
+            output = '6';
+            break;
+        case 'seven':
+            output = '7';
+            break;
+        case 'eight':
+            output = '8';
+            break;
+        case 'nine':
+            output = '9';
+            break;
+        default:
+            default code block
+    }
+
+    if (input === 'previous') {
+        key = 'prev';
+    } else if (key === 'rewind') {
+        key = 'rew';
+    } else if (key === 'channel up') {
+        key = 'chanup';
+    } else if (key === 'channel down') {
+        key = 'chandown';
+    } else if (key === 'one') {
+        key = 1;
+    } else if (key === 'two') {
+        key = 2;
+    }
+
+    return output;
 }
 
 // --------------- Functions that control the skill's behavior -----------------------
@@ -123,9 +197,24 @@ function getCommandResponse(key, callback) {
     var sessionAttributes = {};
     var repromptText = null;
     var cardTitle = "Direct TV Remote";
-    var speechOutput = "Presssing the " + key + " key on the Direct TV set top box";
+    var speechOutput = "Presssing the " + key + " key";
     var repromptText = "I'm sorry, I did not recognize the key you asked me to press.  Try saying, press select or press chanup.";
     var shouldEndSession = true;
+
+    // map key value
+    if (key === 'previous') {
+        key = 'prev';
+    } else if (key === 'rewind') {
+        key = 'rew';
+    } else if (key === 'channel up') {
+        key = 'chanup';
+    } else if (key === 'channel down') {
+        key = 'chandown';
+    } else if (key === 'one') {
+        key = 1;
+    } else if (key === 'two') {
+        key = 2;
+    }
     
     request.get('http://' + REMOTE_IP + ':8080/remote/processKey?key=' + key, function (err, res, body) {
         console.log(body);
@@ -144,7 +233,7 @@ function getTuneResponse(intent, callback) {
     var sessionAttributes = {};
     var cardTitle = "Direct TV Remote";
     var channel = intent.slots.Channel.value;
-    var speechOutput = "Tuning to channel " + channel + " on the Direct TV set top box";
+    var speechOutput = "Tuning to channel " + channel;
     var repromptText = "I'm sorry, I did not recognize the channel you asked me to tune to.  Try saying, channel five, channel eighty four, or channel one hundred forty two.";
     var shouldEndSession = true;
     
