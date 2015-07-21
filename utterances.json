@@ -24,6 +24,14 @@ ChannelUpIntent go up a channel
 ChannelDownIntent channel down
 ChannelDownIntent go down one channel
 ChannelDownIntent go down a channel
+ChannelPreviousIntent previous channel
+ChannelPreviousIntent go to previous channel
+ChannelPreviousIntent go to the previous channel
+ChannelPreviousIntent go back to the previous channel
+ChannelPreviousIntent last channel
+ChannelPreviousIntent go to last channel
+ChannelPreviousIntent go to the last channel
+ChannelPreviousIntent go back to the last channel
 CommandIntent press {power|Command}
 CommandIntent press {poweron|Command}
 CommandIntent press {poweroff|Command}
@@ -38,8 +46,13 @@ CommandIntent press {record|Command}
 CommandIntent press {play|Command}
 CommandIntent press {guide|Command}
 CommandIntent change to {guide|Command}
+CommandIntent go to {guide|Command}
+CommandIntent show me the {guide|Command}
 CommandIntent press {active|Command}
 CommandIntent press {list|Command}
+CommandIntent change to {list|Command}
+CommandIntent go to {list|Command}
+CommandIntent show me the {list|Command}
 CommandIntent press {exit|Command}
 CommandIntent press {back|Command}
 CommandIntent press {menu|Command}
