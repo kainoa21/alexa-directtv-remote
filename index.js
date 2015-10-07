@@ -4,7 +4,8 @@
  
 var request = require('request');
 
-var REMOTE_IP = '68.70.138.99';
+// Put your public IP here
+var REMOTE_IP = 'xxx.xxx.xxx.xxx';
 
 // Route the incoming request based on type (LaunchRequest, IntentRequest,
 // etc.) The JSON body of the request is provided in the event parameter.
@@ -156,21 +157,7 @@ function mapCommand(input) {
             output = '9';
             break;
         default:
-            default code block
-    }
-
-    if (input === 'previous') {
-        key = 'prev';
-    } else if (key === 'rewind') {
-        key = 'rew';
-    } else if (key === 'channel up') {
-        key = 'chanup';
-    } else if (key === 'channel down') {
-        key = 'chandown';
-    } else if (key === 'one') {
-        key = 1;
-    } else if (key === 'two') {
-        key = 2;
+            output = input;
     }
 
     return output;
@@ -202,19 +189,7 @@ function getCommandResponse(key, callback) {
     var shouldEndSession = true;
 
     // map key value
-    if (key === 'previous') {
-        key = 'prev';
-    } else if (key === 'rewind') {
-        key = 'rew';
-    } else if (key === 'channel up') {
-        key = 'chanup';
-    } else if (key === 'channel down') {
-        key = 'chandown';
-    } else if (key === 'one') {
-        key = 1;
-    } else if (key === 'two') {
-        key = 2;
-    }
+    key = mapCommand(key);
     
     request.get('http://' + REMOTE_IP + ':8080/remote/processKey?key=' + key, function (err, res, body) {
         console.log(body);
