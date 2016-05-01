@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "Apache-2.0",
   "dependencies": {
+    "process-nextick-args": "^1.0.6",
     "request": "^2.58.0"
   }
 }

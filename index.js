@@ -190,8 +190,11 @@ function getCommandResponse(key, callback) {
 
     // map key value
     key = mapCommand(key);
+
+    var url = 'http://' + REMOTE_IP + ':8080/remote/processKey?key=' + key;
+    console.log("REQUEST: " + url);
     
-    request.get('http://' + REMOTE_IP + ':8080/remote/processKey?key=' + key, function (err, res, body) {
+    request.get(url, function (err, res, body) {
         console.log(body);
         if (err) {
             // do something
@@ -211,8 +214,11 @@ function getTuneResponse(intent, callback) {
     var speechOutput = "Tuning to channel " + channel;
     var repromptText = "I'm sorry, I did not recognize the channel you asked me to tune to.  Try saying, channel five, channel eighty four, or channel one hundred forty two.";
     var shouldEndSession = true;
+
+    var url = 'http://' + REMOTE_IP + ':8080/tv/tune?major=' + channel;
+    console.log("REQUEST: " + url);
     
-    request.get('http://' + REMOTE_IP + ':8080/tv/tune?major=' + channel, function (err, res, body) {
+    request.get(url, function (err, res, body) {
         console.log(body);
         if (err) {
             // do something

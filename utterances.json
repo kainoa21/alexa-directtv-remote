@@ -1,17 +1,3 @@
-HelpIntent help
-HelpIntent help me
-HelpIntent what can I ask you
-HelpIntent get help
-HelpIntent what commands can I ask
-HelpIntent what commands can I say
-HelpIntent what can I do
-HelpIntent what can I use this for
-HelpIntent what questions can I ask
-HelpIntent what can you do
-HelpIntent what do you do
-HelpIntent how do I use you
-HelpIntent how can I use you
-HelpIntent what can you tell me
 OnIntent on
 OnIntent turn on
 OnIntent power on
@@ -32,74 +18,13 @@ ChannelPreviousIntent last channel
 ChannelPreviousIntent go to last channel
 ChannelPreviousIntent go to the last channel
 ChannelPreviousIntent go back to the last channel
-CommandIntent press {power|Command}
-CommandIntent press {poweron|Command}
-CommandIntent press {poweroff|Command}
-CommandIntent press {format|Command}
-CommandIntent press {pause|Command}
-CommandIntent press {rewind|Command}
-CommandIntent press {replay|Command}
-CommandIntent press {stop|Command}
-CommandIntent press {advance|Command}
-CommandIntent press {fast forward|Command}
-CommandIntent press {record|Command}
-CommandIntent press {play|Command}
-CommandIntent press {guide|Command}
-CommandIntent change to {guide|Command}
-CommandIntent go to {guide|Command}
-CommandIntent show me the {guide|Command}
-CommandIntent press {active|Command}
-CommandIntent press {list|Command}
-CommandIntent change to {list|Command}
-CommandIntent go to {list|Command}
-CommandIntent show me the {list|Command}
-CommandIntent press {exit|Command}
-CommandIntent press {back|Command}
-CommandIntent press {menu|Command}
-CommandIntent press {info|Command}
-CommandIntent press {up|Command}
-CommandIntent press {down|Command}
-CommandIntent press {left|Command}
-CommandIntent press {right|Command}
-CommandIntent press {select|Command}
-CommandIntent press {red|Command}
-CommandIntent press {green|Command}
-CommandIntent press {yellow|Command}
-CommandIntent press {blue|Command}
-CommandIntent press {chanup|Command}
-CommandIntent press {channel up|Command}
-CommandIntent press {chandown|Command}
-CommandIntent press {channel down|Command}
-CommandIntent press {prev|Command}
-CommandIntent press {zero|Command}
-CommandIntent press {one|Command}
-CommandIntent press {two|Command}
-CommandIntent press {three|Command}
-CommandIntent press {four|Command}
-CommandIntent press {five|Command}
-CommandIntent press {six|Command}
-CommandIntent press {seven|Command}
-CommandIntent press {eight|Command}
-CommandIntent press {nine|Command}
-CommandIntent press {dash|Command}
-CommandIntent press {enter|Command}
-TuneIntent channel {one | Channel}
-TuneIntent channel {twenty five | Channel}
-TuneIntent channel {one hundred eleven | Channel}
-TuneIntent channel {two hundred and six | Channel}
-TuneIntent channel {three hundred fourty two | Channel}
-TuneIntent change the channel to {one | Channel}
-TuneIntent change the channel to {twenty five | Channel}
-TuneIntent change the channel to {one hundred eleven | Channel}
-TuneIntent change the channel to {two hundred and six | Channel}
-TuneIntent change the channel to {three hundred fourty two | Channel}
-TuneIntent tune to {one | Channel}
-TuneIntent tune to {twenty five | Channel}
-TuneIntent tune to {one hundred eleven | Channel}
-TuneIntent tune to {two hundred and six | Channel}
-TuneIntent tune to {three hundred fourty two | Channel}
-TuneIntent tune the channel to {one | Channel}
-TuneIntent tune the channel to {twenty five | Channel}
-TuneIntent tune the channel to {one hundred eleven | Channel}
-TuneIntent tune the channel to {two hundred and six | Channel}
-TuneIntent tune the channel to {three hundred fourty two | Channel}
+CommandIntent show me the {Command}
+CommandIntent press {Command}
+CommandIntent press the {Command}
+CommandIntent press the {Command} button
+TuneIntent channel {Channel}
+TuneIntent change the channel to {Channel}
+TuneIntent to change the channel to {Channel}
+TuneIntent tune to {Channel}
+TuneIntent to tune to {Channel}
+TuneIntent tune the channel to {Channel}

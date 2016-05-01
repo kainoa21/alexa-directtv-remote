@@ -1,41 +1,32 @@
 {
   "intents": [
     {
-      "intent": "HelpIntent",
-      "slots": []
+      "intent": "OnIntent"
     },
     {
-      "intent": "OnIntent",
-      "slots": []
-    },
-        {
-      "intent": "OffIntent",
-      "slots": []
+      "intent": "ChannelUpIntent"
     },
     {
-      "intent": "ChannelUpIntent",
-      "slots": []
+      "intent": "ChannelDownIntent"
     },
     {
-      "intent": "ChannelDownIntent",
-      "slots": []
+      "intent": "ChannelPreviousIntent"
     },
     {
-      "intent": "ChannelPreviousIntent",
-      "slots": []
+      "intent": "OffIntent"
     },
     {
       "intent": "CommandIntent",
-      "slots": [ 
+      "slots": [
         {
           "name": "Command",
-          "type": "LITERAL"
+          "type": "LIST_OF_COMMAND"
         }
       ]
     },
     {
       "intent": "TuneIntent",
-      "slots": [ 
+      "slots": [
         {
           "name": "Channel",
           "type": "NUMBER"
