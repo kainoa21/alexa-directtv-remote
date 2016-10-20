@@ -10,6 +10,7 @@ ChannelUpIntent go up a channel
 ChannelDownIntent channel down
 ChannelDownIntent go down one channel
 ChannelDownIntent go down a channel
+ChannelPreviousIntent previous
 ChannelPreviousIntent previous channel
 ChannelPreviousIntent go to previous channel
 ChannelPreviousIntent go to the previous channel
@@ -28,3 +29,15 @@ TuneIntent to change the channel to {Channel}
 TuneIntent tune to {Channel}
 TuneIntent to tune to {Channel}
 TuneIntent tune the channel to {Channel}
+WhatsOnIntent what is on channel {Channel}
+WhatsOnIntent what is playing on channel {Channel}
+WhatsOnIntent what's on channel {Channel}
+WhatsOnIntent what's playing on channel {Channel}
+WhatsOnIntent check channel {Channel}
+WhatsOnIntent preview channel {Channel}
+FastForwardIntent fast forward {Speed}
+FastForwardIntent forward {Speed}
+PlayIntent play
+SkipBackIntent skip back
+SkipBackIntent back
+RewindIntent rewind {Speed}

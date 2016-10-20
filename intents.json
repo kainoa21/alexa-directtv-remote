@@ -16,6 +16,30 @@
       "intent": "OffIntent"
     },
     {
+      "intent": "FastForwardIntent",
+      "slots": [
+        {
+          "name": "Speed",
+          "type": "NUMBER"
+        }
+      ]
+    },
+    {
+      "intent": "PlayIntent"
+    },
+    {
+      "intent": "SkipBackIntent"
+    },
+    {
+      "intent": "RewindIntent",
+      "slots": [
+        {
+          "name": "Speed",
+          "type": "NUMBER"
+        }
+      ]
+    },
+    {
       "intent": "CommandIntent",
       "slots": [
         {
@@ -26,6 +50,15 @@
     },
     {
       "intent": "TuneIntent",
+      "slots": [
+        {
+          "name": "Channel",
+          "type": "NUMBER"
+        }
+      ]
+    },
+    {
+      "intent": "WhatsOnIntent",
       "slots": [
         {
           "name": "Channel",
